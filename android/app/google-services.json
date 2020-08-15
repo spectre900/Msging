@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "968699113956",
+    "firebase_url": "https://msging-fe522.firebaseio.com",
+    "project_id": "msging-fe522",
+    "storage_bucket": "msging-fe522.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968699113956:android:750002255299aa177817f1",
+        "android_client_info": {
+          "package_name": "com.example.msging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968699113956-7l0cd7llp0n7d0qdcidhvc2u8aro2skb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Q10hz1zXe1-i1ED89fISv_4XP-J2TJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968699113956-7l0cd7llp0n7d0qdcidhvc2u8aro2skb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
