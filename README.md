@@ -1,6 +1,6 @@
 # Msging : Flutter application for Messaging
 
-A Messaging Application Developed Using Flutter and Firebase.
+A Messaging Application Developed Using Flutter and Firebase. It supports user authentication, connecting with other users and direct messaging with connected users  
 
 ## About:
 
