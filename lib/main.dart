@@ -261,7 +261,7 @@ class HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar:AppBar(
         title: Center(
-            child:Text('Sign Up'),
+          child:Text('Sign Up'),
         ),
       ),
       body: Container(
@@ -332,104 +332,104 @@ class HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
-                  onTap: ()async{
-                    File originalImage = new File((await getImage()).path);
-                    showDialog(
-                      context:context,
-                      builder: (BuildContext context){
-                        return AlertDialog(
-                          contentPadding: EdgeInsets.all(5),
-                          content: Container(
-                            height: 400,
-                            child: Crop(
-                              key:cropKey,
-                              image: FileImage(originalImage),
-                              aspectRatio: 1.0,
-                            ),
-                          ),
-                          actions: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                FlatButton(
-                                  child: Text(
-                                    'Cancel',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  color: Colors.lightBlueAccent,
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
+                    onTap: ()async{
+                      File originalImage = new File((await getImage()).path);
+                      showDialog(
+                          context:context,
+                          builder: (BuildContext context){
+                            return AlertDialog(
+                              contentPadding: EdgeInsets.all(5),
+                              content: Container(
+                                height: 400,
+                                child: Crop(
+                                  key:cropKey,
+                                  image: FileImage(originalImage),
+                                  aspectRatio: 1.0,
                                 ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                FlatButton(
-                                  child: Text(
-                                    'Upload',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
+                              ),
+                              actions: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    FlatButton(
+                                      child: Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      color: Colors.lightBlueAccent,
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
                                     ),
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  color: Colors.lightBlueAccent,
-                                  onPressed: () async {
-                                    Navigator.of(context).pop();
-                                    File croppedImage = await ImageCrop.cropImage(
-                                      file: originalImage,
-                                      scale: cropKey.currentState.scale,
-                                      area: cropKey.currentState.area,
-                                    );
-                                    sampledUploadImage = await getSampledImage(croppedImage);
-                                    picStreamController.add(sampledUploadImage);
-                                  },
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    FlatButton(
+                                      child: Text(
+                                        'Upload',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      color: Colors.lightBlueAccent,
+                                      onPressed: () async {
+                                        Navigator.of(context).pop();
+                                        File croppedImage = await ImageCrop.cropImage(
+                                          file: originalImage,
+                                          scale: cropKey.currentState.scale,
+                                          area: cropKey.currentState.area,
+                                        );
+                                        sampledUploadImage = await getSampledImage(croppedImage);
+                                        picStreamController.add(sampledUploadImage);
+                                      },
+                                    ),
+                                  ],
                                 ),
                               ],
+                            );
+                          }
+                      );
+                    },
+                    child: StreamBuilder(
+                      stream: picStream,
+                      builder: (BuildContext context,AsyncSnapshot fileSnapshot){
+                        if(fileSnapshot.hasData){
+                          return Container(
+                            height: 70,
+                            width: 70,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: FileImage(fileSnapshot.data),
+                                )
                             ),
-                          ],
-                        );
-                      }
-                    );
-                  },
-                  child: StreamBuilder(
-                    stream: picStream,
-                    builder: (BuildContext context,AsyncSnapshot fileSnapshot){
-                      if(fileSnapshot.hasData){
-                        return Container(
-                          height: 70,
-                          width: 70,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: FileImage(fileSnapshot.data),
-                              )
-                          ),
-                        );
-                      }
-                      else{
-                        return Container(
-                          height: 70,
-                          width: 70,
-                          decoration: BoxDecoration(
+                          );
+                        }
+                        else{
+                          return Container(
+                            height: 70,
+                            width: 70,
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/images/user.jpg'),
                               ),
-                          ),
-                        );
-                      }
-                    },
-                  )
+                            ),
+                          );
+                        }
+                      },
+                    )
                 ),
                 FlatButton(
                   child: Text(
@@ -638,37 +638,37 @@ class HomePageState extends State<HomePage> {
 
   Widget getUserPage(FirebaseUser user){
     return Scaffold(
-      key: scaffoldKeyUserHomePage,
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      appBar:AppBar(
-        title: Center(
-          child:Text('@'+user.displayName),
+        key: scaffoldKeyUserHomePage,
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.white,
+        appBar:AppBar(
+          title: Center(
+            child:Text('@'+user.displayName),
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.group),
-            title: Text('Friends'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_add),
-            title: Text('Requests'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.arrow_back),
-            title: Text('LogOut'),
-          ),
-        ],
-        currentIndex: userState,
-        selectedItemColor: Colors.blue,
-        onTap: (int index){
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: Text('Home'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.group),
+              title: Text('Friends'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_add),
+              title: Text('Requests'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_back),
+              title: Text('LogOut'),
+            ),
+          ],
+          currentIndex: userState,
+          selectedItemColor: Colors.blue,
+          onTap: (int index){
             if(index!=userState){
               if(index==USER_STATE_HOME){
                 setState(() {
@@ -700,17 +700,17 @@ class HomePageState extends State<HomePage> {
                 });
               }
             }
-        },
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage('assets/images/background.jpg'),
-            )
+          },
         ),
-        child:getUserPageAsPerState(user),
-      )
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage('assets/images/background.jpg'),
+              )
+          ),
+          child:getUserPageAsPerState(user),
+        )
     );
   }
 
@@ -741,11 +741,11 @@ class HomePageState extends State<HomePage> {
                 height: 70,
                 width: 70,
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image:user.photoUrl==null?AssetImage('assets/images/user.jpg'):NetworkImage(user.photoUrl),
-                  )
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image:user.photoUrl==null?AssetImage('assets/images/user.jpg'):NetworkImage(user.photoUrl),
+                    )
                 ),
               ),
               SizedBox(
@@ -766,8 +766,8 @@ class HomePageState extends State<HomePage> {
                   Text(
                     formatEmail(user.email),
                     style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15
+                        color: Colors.grey,
+                        fontSize: 15
                     ),
                   )
                 ],
@@ -1317,43 +1317,43 @@ void openChatPage(FirebaseUser user,String username,BuildContext context){
               backgroundColor: Colors.transparent,
               resizeToAvoidBottomInset: true,
               appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(65),
-                  child: Container(
-                    color: Colors.blue,
-                    child: Center(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(
-                            width: 20,
+                preferredSize: Size.fromHeight(65),
+                child: Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image:NetworkImage(getUrl(username)),
+                              )
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image:NetworkImage(getUrl(username)),
-                                )
-                            ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          '@'+username,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            '@'+username,
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
+                ),
               ),
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -1468,19 +1468,19 @@ String msgFormat(String msg){
   if(msg.length>25){
     return msg.substring(0,25)+'....';
   }
- return msg;
+  return msg;
 }
 
 Widget getChat(String text,int time,bool key,tapFunction){
   DateTime date = DateTime.fromMillisecondsSinceEpoch(time);
   return GestureDetector(
     onTap: tapFunction,
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(10,8,10,8),
-        child: Wrap(
-          alignment: key?WrapAlignment.start:WrapAlignment.end,
-          children: <Widget>[
-            Bubble(
+    child: Padding(
+      padding: EdgeInsets.fromLTRB(10,8,10,8),
+      child: Wrap(
+        alignment: key?WrapAlignment.start:WrapAlignment.end,
+        children: <Widget>[
+          Bubble(
               margin: key?BubbleEdges.only(right: 35):BubbleEdges.only(left: 35),
               nip: key?BubbleNip.leftTop:BubbleNip.rightTop,
               color: key?Colors.white:Colors.lightBlueAccent.shade100,
@@ -1505,10 +1505,10 @@ Widget getChat(String text,int time,bool key,tapFunction){
                   ),
                 ],
               )
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
+    ),
   );
 }
 Future getImage() async {
@@ -1524,7 +1524,7 @@ Future getSampledImage(File image) async{
 }
 
 String getUrl(String userName){
-  return 'https://firebasestorage.googleapis.com/v0/b/msging-fe522.appspot.com/o/'+userName+'?alt=media';
+  return 'https://firebasestorage.googleapis.com/v0/b/msging-a1cc8.appspot.com/o/'+userName+'?alt=media';
 }
 
 Future<FirebaseUser> signUp(String email,String password) async {

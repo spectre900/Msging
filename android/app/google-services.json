@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "968699113956",
-    "firebase_url": "https://msging-fe522.firebaseio.com",
-    "project_id": "msging-fe522",
-    "storage_bucket": "msging-fe522.appspot.com"
+    "project_number": "376116198124",
+    "project_id": "msging-a1cc8",
+    "storage_bucket": "msging-a1cc8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:968699113956:android:750002255299aa177817f1",
+        "mobilesdk_app_id": "1:376116198124:android:26fcd57a64ff199abe03c9",
         "android_client_info": {
           "package_name": "com.example.msging"
         }
       },
       "oauth_client": [
         {
-          "client_id": "968699113956-7l0cd7llp0n7d0qdcidhvc2u8aro2skb.apps.googleusercontent.com",
+          "client_id": "376116198124-41mkf4hj5o9eogtdlm533j1ao9ki1e9u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB2Q10hz1zXe1-i1ED89fISv_4XP-J2TJ4"
+          "current_key": "AIzaSyBpThmmeoxhm1KK7nHBfxhEDvXqbAjfrEg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "968699113956-7l0cd7llp0n7d0qdcidhvc2u8aro2skb.apps.googleusercontent.com",
+              "client_id": "376116198124-41mkf4hj5o9eogtdlm533j1ao9ki1e9u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
